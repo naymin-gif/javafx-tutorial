@@ -1,11 +1,25 @@
-/* This targets the main window background */
+/* Set the background image and stretch it to fit the window */
 .root {
-    -fx-background-color: #ffffff;
+    -fx-background-color: rgb(237, 255, 242);
+    -fx-background-image: url("../images/background.jpg");
+    -fx-background-size: 400px 600px;
+    -fx-background-repeat: repeat stretch;
 }
 
-/* We will apply this class to our chat messages */
+/* Your standard styles from before */
 .dialog-label {
     -fx-background-color: #e0e0e0;
     -fx-padding: 10px;
     -fx-background-radius: 15px;
+}
+
+/* Dynamic command styles */
+.add-label {
+    -fx-background-color: yellow;
+}
+.marked-label {
+    -fx-background-color: palegreen;
+}
+.delete-label {
+    -fx-background-color: lightpink;
 }

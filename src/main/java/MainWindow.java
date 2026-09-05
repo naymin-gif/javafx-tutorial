@@ -24,18 +24,29 @@ public class MainWindow extends AnchorPane {
         scrollPane.vvalueProperty().bind(dialogContainer.heightProperty());
     }
 
+    private String getResponse(String input) {
+        return "Duke heard: " + input;
+    }
+    private Duke duke;
+
+    public void setDuke(Duke d) {
+        this.duke = d;
+    }
+
     @FXML
     private void handleUserInput() {
         String input = userInput.getText();
-        String response = getResponse(input);
+
+        // Let your actual bot generate the response string
+        String response = duke.getResponse(input);
+
+        // Ask your bot what type of command it just executed
+        String commandType = duke.getCommandType();
+
         dialogContainer.getChildren().addAll(
                 DialogBox.getUserDialog(input, userImage),
-                DialogBox.getDukeDialog(response, dukeImage)
+                DialogBox.getDukeDialog(response, dukeImage, commandType)
         );
         userInput.clear();
-    }
-
-    private String getResponse(String input) {
-        return "Duke heard: " + input;
     }
 }
