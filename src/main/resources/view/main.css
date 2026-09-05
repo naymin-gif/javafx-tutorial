@@ -1,0 +1,11 @@
+/* This targets the main window background */
+.root {
+    -fx-background-color: #ffffff;
+}
+
+/* We will apply this class to our chat messages */
+.dialog-label {
+    -fx-background-color: #e0e0e0;
+    -fx-padding: 10px;
+    -fx-background-radius: 15px;
+}
